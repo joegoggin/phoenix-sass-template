@@ -1,0 +1,30 @@
+.input-checkbox {
+    display: grid;
+    gap: 6px;
+    padding-block: 4px;
+    font-size: 12px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+
+    &__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+        color: color-mix(in oklab, currentColor 60%, transparent);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__checkbox {
+        border: 1.5px solid #ecf9ff;
+        width: 17px;
+        height: 17px;
+
+        &:checked {
+            accent-color: #605dff;
+        }
+    }
+}

@@ -184,17 +184,17 @@ defmodule AppWeb.CoreComponents do
       end)
 
     ~H"""
-    <div class="fieldset mb-2">
+    <div class="input-checkbox">
       <label>
         <input type="hidden" name={@name} value="false" disabled={@rest[:disabled]} />
-        <span class="label">
+        <span class="input-checkbox__label">
           <input
             type="checkbox"
             id={@id}
             name={@name}
             value="true"
             checked={@checked}
-            class={@class || "checkbox checkbox-sm"}
+            class={[@class, "input-checkbox__checkbox"]}
             {@rest}
           />{@label}
         </span>
