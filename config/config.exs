@@ -53,7 +53,7 @@ config :phoenix, :json_library, Jason
 config :dart_sass,
   version: "1.69.5",
   default: [
-    args: ~w(css/app.scss ../priv/static/assets/css/app.css),
+    args: ~w(--load-path=./css css/app.scss ../priv/static/assets/css/app.css),
     cd: Path.expand("../assets", __DIR__)
   ]
 

@@ -1,0 +1,24 @@
+<div
+  :if={msg = render_slot(@inner_block) || Phoenix.Flash.get(@flash, @kind)}
+  id={@id}
+  phx-click={JS.push("lv:clear-flash", value: %{key: @kind}) |> hide("##{@id}")}
+  role="alert"
+  class="flash"
+  {@rest}
+>
+  <div class={[
+    "flash__alert",
+    @kind == :info && "flash__alert--info",
+    @kind == :error && "flash__alert--error"
+  ]}>
+    <.icon :if={@kind == :info} name="hero-information-circle" class="flash__icon" />
+    <.icon :if={@kind == :error} name="hero-exclamation-circle" class="flash__icon" />
+    <div>
+      <p :if={@title} class="flash__title">{@title}</p>
+      <p>{msg}</p>
+    </div>
+    <button type="button" class="flash__button" aria-label={gettext("close")}>
+      <.icon name="hero-x-mark" />
+    </button>
+  </div>
+</div>

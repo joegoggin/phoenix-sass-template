@@ -1,0 +1,78 @@
+@use "mixins/media" as media;
+
+.flash {
+    position: fixed;
+    left: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 16px;
+    display: flex;
+    min-width: fit-content;
+    flex-direction: column;
+    gap: 8px;
+    background-color: transparent;
+    white-space: nowrap;
+    z-index: 50;
+
+    & > * {
+        animation: flash 0.25s ease-out;
+    }
+
+    &__alert {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 8px;
+        padding: 12px 16px;
+        justify-content: flex-start;
+        font-size: 14px;
+        line-height: 20px;
+        width: 384px;
+        max-width: 384px;
+        text-wrap: wrap;
+
+        @include media.phone() {
+            width: 320px;
+            max-width: 320px;
+        }
+
+        &--info {
+            background: #0082ce;
+            color: #edf7fd;
+        }
+
+        &--error {
+            background: #e9003e;
+            color: #fceeef;
+        }
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+    &__button {
+        align-self: flex-start;
+        margin-left: auto;
+
+        &:hover {
+            cursor: pointer;
+
+            span {
+                opacity: 0.7;
+            }
+        }
+
+        span {
+            width: 20px;
+            height: 20px;
+            opacity: 0.4;
+        }
+    }
+}
