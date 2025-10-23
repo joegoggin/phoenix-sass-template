@@ -1,8 +1,17 @@
 <Layouts.app flash={@flash}>
   <section class="home-page">
-    <h1>Phoenix SASS Template</h1>
-    <h2>Core Components</h2>
     <.flash kind={:info} phx-mounted={show("#flash")}>This is an info message!</.flash>
     <.flash kind={:error} phx-mounted={show("#flash")}>This is an error message!</.flash>
+
+    <h1>Phoenix SASS Template</h1>
+    <h2>Core Components</h2>
+
+    <h3>Button</h3>
+
+    <h4>Regular</h4>
+    <.button>Send!</.button>
+
+    <h4>Primary</h4>
+    <.button variant="primary">Send!</.button>
   </section>
 </Layouts.app>

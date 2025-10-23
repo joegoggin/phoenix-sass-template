@@ -1,0 +1,25 @@
+.button {
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: rgba(#1e2329, 0.5);
+    color: #605dff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background: #605dff;
+        color: #edf1fe;
+        transform: scale(1.05);
+    }
+
+    &--primary {
+        background: #605dff;
+        color: #edf1fe;
+
+        &:hover {
+            background: lighten(#605dff, 2%);
+        }
+    }
+}
